@@ -1,46 +1,94 @@
 *{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    align-items: center;
+    font-family:Arial, Helvetica, sans-serif;
     color: #0f143c;
 }
 
-body {
-background-color: #96c1dc;
-
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/412010986_10168526826125066_2873982772716469880_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=dO5hOk12Z8UQ7kNvgE-3nZm&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AzYnRzR7SL1na9BraezdmYL&oh=00_AYChq26DHOYDxXnKj9x6aEMEE_-tbGxRBhsXwuxkerL_Jg&oe=67273685');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1; 
 }
 
-img{
-    border-radius:20px;
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); 
+  z-index: -1;
 }
 
-.intro {
-    text-align: center;
+h1{
+  font-weight:bold;
+  font-size:30px;
+}
+
+#introimg {
+  float:right;
+  height:600px;
+}
+
+#intro {
+    text-align: left;
     margin-bottom: 20px; 
-    background-color:#bee7f1;
-    padding:20px;
+
     border-radius:20px;
-    margin:10px;
-  }
+    justify-content:left;
+    align-items:left;
+}
 
 .columns {
+    padding:30px;
     display: flex;
     gap: 10px; 
     align-items:stretch;
     border-radius:20px;
-  }
+}
 
 .col {
     flex: 1; 
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;
-    background-color:#bee7f1;
     
+    margin: 10px;
+    height:600px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
+  
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  font-size:20px;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  height:400px;
+  overflow-y:auto;
 }
